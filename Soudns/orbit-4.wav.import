@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/orbit-4.wav-ecf05cf8f23574b2a016743060a45add.sample"
+
+[deps]
+
+source_file="res://Soudns/orbit-4.wav"
+dest_files=[ "res://.import/orbit-4.wav-ecf05cf8f23574b2a016743060a45add.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

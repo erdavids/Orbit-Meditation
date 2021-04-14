@@ -1,0 +1,285 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Planet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Orbit-1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Orbit-2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Orbit-4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Orbit-3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Satellite.png" type="Texture" id=6]
+[ext_resource path="res://App.gd" type="Script" id=7]
+[ext_resource path="res://Fonts/fontp.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Soudns/inner-orbit.wav" type="AudioStream" id=9]
+[ext_resource path="res://Soudns/orbit-4.wav" type="AudioStream" id=10]
+[ext_resource path="res://Soudns/orbit-2.wav" type="AudioStream" id=11]
+[ext_resource path="res://Soudns/orbit-3.wav" type="AudioStream" id=12]
+[ext_resource path="res://Fonts/roboto/Roboto-Regular.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 13 )
+
+[node name="App" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="System" type="Node2D" parent="."]
+position = Vector2( 205.34, 395.992 )
+scale = Vector2( 0.05, 0.05 )
+
+[node name="Planet" type="Sprite" parent="System"]
+texture = ExtResource( 1 )
+
+[node name="Orbit-1" type="Sprite" parent="System"]
+position = Vector2( 0, 9 )
+texture = ExtResource( 2 )
+
+[node name="Satellite" type="Sprite" parent="System/Orbit-1"]
+position = Vector2( 0, -1447.51 )
+texture = ExtResource( 6 )
+
+[node name="Orbit-2" type="Sprite" parent="System"]
+visible = false
+texture = ExtResource( 3 )
+
+[node name="Satellite" type="Sprite" parent="System/Orbit-2"]
+position = Vector2( 0, -1912.95 )
+texture = ExtResource( 6 )
+
+[node name="Orbit-3" type="Sprite" parent="System"]
+visible = false
+texture = ExtResource( 5 )
+
+[node name="Satellite" type="Sprite" parent="System/Orbit-3"]
+position = Vector2( 0, -2371.25 )
+texture = ExtResource( 6 )
+
+[node name="Orbit-4" type="Sprite" parent="System"]
+visible = false
+texture = ExtResource( 4 )
+
+[node name="Satellite" type="Sprite" parent="System/Orbit-4"]
+position = Vector2( 0, -2834.31 )
+texture = ExtResource( 6 )
+
+[node name="orbit-timer-1" type="Timer" parent="."]
+
+[node name="orbit-timer-2" type="Timer" parent="."]
+
+[node name="orbit-timer-3" type="Timer" parent="."]
+
+[node name="orbit-timer-4" type="Timer" parent="."]
+
+[node name="PlanetButton" type="TextureButton" parent="."]
+margin_left = 164.0
+margin_top = 350.0
+margin_right = 250.0
+margin_bottom = 444.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Node2D" parent="."]
+
+[node name="OrbitalPeriodDecrease" type="TextureButton" parent="Options"]
+margin_left = 132.0
+margin_top = 628.0
+margin_right = 172.0
+margin_bottom = 668.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/OrbitalPeriodDecrease"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "-"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbitalPeriodIncrease" type="TextureButton" parent="Options"]
+margin_left = 242.0
+margin_top = 628.0
+margin_right = 282.0
+margin_bottom = 668.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/OrbitalPeriodIncrease"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "+"
+align = 1
+valign = 1
+
+[node name="OrbitsIncrease" type="TextureButton" parent="Options"]
+margin_left = 242.0
+margin_top = 730.0
+margin_right = 282.0
+margin_bottom = 770.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/OrbitsIncrease"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "+"
+align = 1
+valign = 1
+
+[node name="OrbitsDecrease" type="TextureButton" parent="Options"]
+margin_left = 132.0
+margin_top = 730.0
+margin_right = 172.0
+margin_bottom = 770.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/OrbitsDecrease"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "-"
+align = 1
+valign = 1
+
+[node name="InfoButton" type="TextureButton" parent="Options"]
+margin_left = 362.0
+margin_top = 12.0
+margin_right = 402.0
+margin_bottom = 52.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/InfoButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "?"
+align = 1
+valign = 1
+
+[node name="BreathingButton" type="TextureButton" parent="Options"]
+margin_top = 792.0
+margin_right = 410.0
+margin_bottom = 832.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Options/BreathingButton"]
+margin_right = 412.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 8 )
+text = "Meditation Timer"
+align = 1
+valign = 1
+
+[node name="OrbitalPeriodLabel" type="Label" parent="Options"]
+margin_top = 582.0
+margin_right = 410.0
+margin_bottom = 630.0
+custom_fonts/font = ExtResource( 8 )
+text = "Base Orbital Period"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="Options"]
+visible = false
+margin_left = 8.0
+margin_top = 66.0
+margin_right = 402.0
+margin_bottom = 239.0
+custom_fonts/font = SubResource( 1 )
+text = "Tap the planet to begin
+
+The inner ring is your base orbit
+
+Each subsequent ring doubles in time
+
+Tap \"Meditation Timer\" to switch tools
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbitCount" type="Label" parent="Options"]
+margin_top = 728.0
+margin_right = 410.0
+margin_bottom = 776.0
+custom_fonts/font = ExtResource( 8 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbitPeriodTime" type="Label" parent="Options"]
+margin_top = 626.0
+margin_right = 410.0
+margin_bottom = 674.0
+custom_fonts/font = ExtResource( 8 )
+text = "2:40"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbitsLabel" type="Label" parent="Options"]
+margin_top = 678.0
+margin_right = 410.0
+margin_bottom = 726.0
+custom_fonts/font = ExtResource( 8 )
+text = "Orbit Count"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="orbit-1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="orbit-2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="orbit-3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="orbit-4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+[connection signal="timeout" from="orbit-timer-1" to="." method="_on_orbittimer1_timeout"]
+[connection signal="timeout" from="orbit-timer-2" to="." method="_on_orbittimer2_timeout"]
+[connection signal="timeout" from="orbit-timer-3" to="." method="_on_orbittimer3_timeout"]
+[connection signal="timeout" from="orbit-timer-4" to="." method="_on_orbittimer4_timeout"]
+[connection signal="pressed" from="PlanetButton" to="." method="_on_PlanetButton_pressed"]
+[connection signal="pressed" from="Options/OrbitalPeriodDecrease" to="." method="_on_OrbitalPeriodDecrease_pressed"]
+[connection signal="pressed" from="Options/OrbitalPeriodIncrease" to="." method="_on_OrbitalPeriodIncrease_pressed"]
+[connection signal="pressed" from="Options/OrbitsIncrease" to="." method="_on_OrbitsIncrease_pressed"]
+[connection signal="pressed" from="Options/OrbitsDecrease" to="." method="_on_OrbitsDecrease_pressed"]
+[connection signal="pressed" from="Options/InfoButton" to="." method="_on_InfoButton_pressed"]
+[connection signal="pressed" from="Options/BreathingButton" to="." method="_on_BreathingButton_pressed"]
+[connection signal="finished" from="orbit-1" to="." method="_on_orbit1_finished"]
+[connection signal="finished" from="orbit-2" to="." method="_on_orbit1_finished"]
+[connection signal="finished" from="orbit-3" to="." method="_on_orbit1_finished"]
+[connection signal="finished" from="orbit-4" to="." method="_on_orbit1_finished"]

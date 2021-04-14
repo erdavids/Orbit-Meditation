@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/inner-orbit-sounds.wav-61cf8e09fab3d98bd89689158113b3e4.sample"
+
+[deps]
+
+source_file="res://Soudns/inner-orbit-sounds.wav"
+dest_files=[ "res://.import/inner-orbit-sounds.wav-61cf8e09fab3d98bd89689158113b3e4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
